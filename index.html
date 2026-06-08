@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Cleaning Staff Recruitment - Narita</title>
+    <style>
+        :root {
+            --primary-blue: #0b3c5d;
+            --secondary-blue: #328cc1;
+            --accent-orange: #d9b310;
+            --dark-gold: #b58900;
+            --bg-light: #f9f9f9;
+            --text-dark: #1d2731;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 5px solid var(--accent-orange);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Highlights Section */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .highlight-card {
+            background: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary-blue);
+        }
+
+        .highlight-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-card h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            color: var(--primary-blue);
+        }
+
+        /* Jobs Section */
+        .section-title {
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-orange);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .job-header {
+            padding: 1.5rem;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .job-meister { background-color: #1e56a0; }
+        .job-make { background-color: #d66800; }
+
+        .job-body {
+            padding: 2rem;
+        }
+
+        .price-tag {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px dashed #eee;
+            padding-bottom: 1rem;
+        }
+
+        .price-tag span {
+            font-size: 1rem;
+            font-weight: normal;
+            color: #666;
+        }
+
+        .job-details p {
+            margin: 0.8rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Info Section */
+        .info-box {
+            background: #fff;
+            border-left: 5px solid var(--accent-orange);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 4rem;
+        }
+
+        .info-box ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        .info-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Locations */
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .location-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+
+        .location-card h4 {
+            margin: 0 0 1.0rem 0;
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-section h2 {
+            margin-top: 0;
+            color: var(--accent-orange);
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #a3d2ca;
+        }
+
+        .contact-method p {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .contact-method span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: normal;
+            opacity: 0.8;
+            margin-top: 0.3rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>호텔 청소 스태프 모집!</h1>
+        <p>Hotel Cleaning Staff Recruitment - Narita Area</p>
+        <p style="font-size: 1.1rem; margin-top: 15px; color: var(--accent-orange);">
+            සූවිශේෂී හෝටල් සේවාවක් එක්ක එකතු වෙමු! / Join Our Team!
+        </p>
+    </header>
+
+    <div class="container">
+        
+        <div class="highlights">
+            <div class="highlight-card">
+                <div class="icon">🔰</div>
+                <h3>No Experience Needed</h3>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">👥</div>
+                <h3>Age 60+ Welcome</h3>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">💬</div>
+                <h3>Japanese Not Required</h3>
+            </div>
